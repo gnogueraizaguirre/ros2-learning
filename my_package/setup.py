@@ -15,8 +15,8 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='gus',
-    maintainer_email='gus@todo.todo',
-    description='TODO: Package description',
+    maintainer_email='g.nogueraizaguirre@gmail.com',
+    description='Beginner client libraries tutorials practice package',
     license='Apache-2.0',
     extras_require={
         'test': [
