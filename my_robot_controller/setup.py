@@ -26,6 +26,7 @@ setup(
     entry_points={
         'console_scripts': [
             'my_first_node = my_robot_controller.my_first_node:main',
+            'draw_circle = my_robot_controller.draw_circle:main',
         ],
     },
 )
