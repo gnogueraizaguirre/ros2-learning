@@ -13,11 +13,17 @@ find_package(std_msgs REQUIRED)
 # Executables
 add_executable(my_first_cpp_node src/my_first_node.cpp)
 target_link_libraries(my_first_cpp_node PUBLIC
+rclcpp::rclcpp)
+
+add_executable(my_cpp_publisher src/my_cpp_publisher.cpp)
+target_link_libraries(my_cpp_publisher PUBLIC
 rclcpp::rclcpp 
 std_msgs::std_msgs)
 
+
 install(TARGETS
   my_first_cpp_node
+  my_cpp_publisher
   DESTINATION lib/${PROJECT_NAME}
 )
 
