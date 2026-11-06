@@ -20,10 +20,21 @@ target_link_libraries(my_cpp_publisher PUBLIC
 rclcpp::rclcpp 
 std_msgs::std_msgs)
 
+add_executable(subscriber src/my_cpp_subscriber.cpp)
+target_link_libraries(subscriber PUBLIC
+rclcpp::rclcpp 
+std_msgs::std_msgs)
+
+add_executable(clock src/clock.cpp)
+target_link_libraries(clock PUBLIC
+rclcpp::rclcpp 
+std_msgs::std_msgs)
 
 install(TARGETS
   my_first_cpp_node
   my_cpp_publisher
+  subscriber
+  clock
   DESTINATION lib/${PROJECT_NAME}
 )
 

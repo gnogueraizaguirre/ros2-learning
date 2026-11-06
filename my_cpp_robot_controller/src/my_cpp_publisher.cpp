@@ -17,9 +17,8 @@ private:
     void publishNews(){
         auto msg = std_msgs::msg::String();
         msg.data = std::string("Hi, this is ") + robot_name_;
-        publisher_->publish(msg); // this one has an arrow???
+        publisher_->publish(msg); // Arrow
     }
-
     std::string robot_name_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;  // This creates the publisher
     rclcpp::TimerBase::SharedPtr timer_;
