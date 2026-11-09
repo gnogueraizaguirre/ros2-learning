@@ -4,9 +4,9 @@ from rclpy.node import Node
 from std_msgs.msg import Int32
  
  
-class PublisherNode(Node): # MODIFY NAME
+class PublisherNode(Node): 
     def __init__(self):
-        super().__init__("Numbers_Node") # MODIFY NAME
+        super().__init__("Numbers_Node") 
         self.number_publisher = self.create_publisher(Int32,"numbers",10)
         self.get_logger().info("Publisher Started")
         self.number_timer = self.create_timer(1.0,  self.timer_callback)
@@ -22,7 +22,7 @@ class PublisherNode(Node): # MODIFY NAME
  
 def main(args=None):
     rclpy.init(args=args)
-    node = PublisherNode() # MODIFY NAME
+    node = PublisherNode() 
     rclpy.spin(node)
     rclpy.shutdown()
  

@@ -25,7 +25,7 @@ private:
         counter_ += number->data;
         auto msg = std_msgs::msg::String();
         msg.data = "Current count: " + std::to_string(counter_);
-        publisher_->publish(msg); // i keep forgetting how to use these arrors
+        publisher_->publish(msg);
     }
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
     rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr subscriber_;
