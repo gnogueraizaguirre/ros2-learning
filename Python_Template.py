@@ -3,17 +3,17 @@ import rclpy
 from rclpy.node import Node
  
  
-class MyCustomNode(Node): # MODIFY NAME
-    def _init_(self):
-        super()._init_("node_name") # MODIFY NAME
+class MyCustomNode(Node):
+    def __init__(self):
+        super().__init__("node_name")
  
  
 def main(args=None):
     rclpy.init(args=args)
-    node = MyCustomNode() # MODIFY NAME
+    node = MyCustomNode()
     rclpy.spin(node)
     rclpy.shutdown()
  
  
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
