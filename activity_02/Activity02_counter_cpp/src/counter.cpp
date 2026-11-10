@@ -1,7 +1,9 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/int32.hpp"
 #include "std_msgs/msg/string.hpp"
+#include "example_interfaces/srv/set_bool.hpp"
 
+using namespace std::placeholders;
      
 class CounterNode : public rclcpp::Node 
 {
@@ -16,8 +18,10 @@ public:
             this,
             std::placeholders::_1)
         );
+        reset_counter_ = create_service<example_interfaces::srv::SetBool>("ResetCounter", std::bind(&CounterNode::resetCounterCallback, this, _1,_2));
         RCLCPP_INFO(get_logger(), "Counter Node has started");
     }
+
  
 private:
     void numbers_callback(const std_msgs::msg::Int32::SharedPtr number){
@@ -27,8 +31,23 @@ private:
         msg.data = "Current count: " + std::to_string(counter_);
         publisher_->publish(msg);
     }
+
+    void resetCounterCallback(const example_interfaces::srv::SetBool::Request::SharedPtr request,
+                              const example_interfaces::srv::SetBool::Response::SharedPtr response){
+        if (request->data == true){
+            counter_ = 0;
+            response->success =1;
+            response->message = "Counter restarted successfully";
+        }
+        else{
+            response->success =0;
+            response->message = "Counter not restarted";
+        }
+        RCLCPP_INFO(get_logger(), "Request received: %d", int(request->data));
+    }
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
     rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr subscriber_;
+    rclcpp::Service<example_interfaces::srv::SetBool>::SharedPtr reset_counter_;
     int counter_;
 
 };

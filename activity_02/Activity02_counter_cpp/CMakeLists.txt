@@ -9,12 +9,14 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(example_interfaces REQUIRED)
 
 # Executables
 add_executable(counter src/counter.cpp)
 target_link_libraries(counter PUBLIC
 rclcpp::rclcpp
 std_msgs::std_msgs
+example_interfaces::example_interfaces
 )
 
 install(TARGETS
