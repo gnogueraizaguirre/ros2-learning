@@ -30,6 +30,7 @@ setup(
             'pose_subscriber = my_robot_controller.pose_subscriber:main',
             'turtle_controller = my_robot_controller.turtle_controller:main',
             'turtle_controller_spiral = my_robot_controller.turtle_controller_spiral:main',
+            'hw_status_publisher = my_robot_controller.hardware_status_publisher:main'
         ],
     },
 )
