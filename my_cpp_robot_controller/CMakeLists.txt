@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(my_robot_interfaces REQUIRED)
 
 # Executables
 add_executable(my_first_cpp_node src/my_first_node.cpp)
@@ -30,11 +31,17 @@ target_link_libraries(clock PUBLIC
 rclcpp::rclcpp 
 std_msgs::std_msgs)
 
+add_executable(hw_status_publisher src/hardware_status_publisher.cpp)
+target_link_libraries(hw_status_publisher PUBLIC
+rclcpp::rclcpp 
+my_robot_interfaces::my_robot_interfaces)
+
 install(TARGETS
   my_first_cpp_node
   my_cpp_publisher
   subscriber
   clock
+  hw_status_publisher
   DESTINATION lib/${PROJECT_NAME}
 )
 
