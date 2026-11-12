@@ -1,0 +1,8 @@
+# Calculates de area of a rectangle LxW and the volume of a cube LxWxH, duh
+
+float64 length
+float64 width
+float64 height
+---
+float64 area
+float64 volume

@@ -18,6 +18,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   #"one per line"
   #"no comma for separating lines"
   "msg/HardwareStatus.msg"
+  "srv/Cubicate.srv"
  )
 ament_export_dependencies(rosidl_default_runtime) #up to this line
 
