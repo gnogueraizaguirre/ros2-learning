@@ -36,12 +36,18 @@ target_link_libraries(hw_status_publisher PUBLIC
 rclcpp::rclcpp 
 my_robot_interfaces::my_robot_interfaces)
 
+add_executable(led_panel_service src/led_panel.cpp)
+target_link_libraries(led_panel_service PUBLIC
+rclcpp::rclcpp 
+my_robot_interfaces::my_robot_interfaces)
+
 install(TARGETS
   my_first_cpp_node
   my_cpp_publisher
   subscriber
   clock
   hw_status_publisher
+  led_panel_service
   DESTINATION lib/${PROJECT_NAME}
 )
 

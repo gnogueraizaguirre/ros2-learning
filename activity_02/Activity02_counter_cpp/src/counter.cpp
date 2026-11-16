@@ -44,7 +44,7 @@ private:
             response->success =0;
             response->message = "Counter not restarted";
         }
-        RCLCPP_INFO(get_logger(), "Request received: %d" int(request->data));
+        //RCLCPP_INFO(get_logger(), "Request received: %d" int(request->data));
     }
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
     rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr subscriber_;

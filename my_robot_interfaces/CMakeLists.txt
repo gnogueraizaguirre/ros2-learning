@@ -19,6 +19,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   #"no comma for separating lines"
   "msg/HardwareStatus.msg"
   "srv/Cubicate.srv"
+  "msg/LedPanel.msg"
+  "srv/Switch.srv"
  )
 ament_export_dependencies(rosidl_default_runtime) #up to this line
 
