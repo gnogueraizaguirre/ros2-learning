@@ -1,0 +1,4 @@
+# For switching lights on and off
+int32 led_number
+bool status
+---
