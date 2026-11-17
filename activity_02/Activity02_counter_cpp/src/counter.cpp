@@ -30,7 +30,7 @@ private:
         counter_ += number->data;
         auto msg = std_msgs::msg::String();
         msg.data = "Current count: " + std::to_string(counter_);
-        RCLCPP_INFO(get_logger(), "Current counts: %d", counter_);
+        RCLCPP_INFO(get_logger(), "Current count: %d", counter_);
         publisher_->publish(msg);
     }
 
