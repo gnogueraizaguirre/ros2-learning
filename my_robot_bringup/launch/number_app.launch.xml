@@ -1,8 +1,8 @@
 <launch>
-    <node pkg="Activity02_counter_cpp" exec="counter" name="my_number_counter">
+    <node pkg="Activity02_counter_cpp" exec="counter" name="my_number_counter" namespace="/counter">
         <param name="counter" value="100"/>
     </node>
-    <node pkg="Activity02_Publisher_py" exec="number_publisher" name="my_number_publisher">
+    <node pkg="Activity02_Publisher_py" exec="number_publisher" name="my_number_publisher" namespace="/counter">
         <param name="timer_length" value="2.0"/>
         <param name="number_min" value="5"/>
         <param name="number_max" value="50"/>
