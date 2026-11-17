@@ -26,10 +26,11 @@ public:
  
 private:
     void numbers_callback(const std_msgs::msg::Int32::SharedPtr number){
-        RCLCPP_INFO(get_logger(), "Number received: %d", number->data);
+        RCLCPP_INFO(get_logger(), "New number received: %d", number->data);
         counter_ += number->data;
         auto msg = std_msgs::msg::String();
         msg.data = "Current count: " + std::to_string(counter_);
+        RCLCPP_INFO(get_logger(), "Current counts: %d", counter_);
         publisher_->publish(msg);
     }
 

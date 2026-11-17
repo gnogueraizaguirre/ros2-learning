@@ -15,7 +15,7 @@ public:
         led_panel_service_ = create_service<my_robot_interfaces::srv::Switch>("switch_led_panel", std::bind(&LedPanelNode::switch_led_panel_callback, 
                                             this, std::placeholders::_1, std::placeholders::_2));
         timer_ = create_wall_timer(1s, std::bind(&LedPanelNode::publish_led_panel_state, this));
-    }
+    }   
  
 private:
     void switch_led_panel_callback( const my_robot_interfaces::srv::Switch::Request::SharedPtr request,
