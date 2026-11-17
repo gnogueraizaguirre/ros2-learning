@@ -3,13 +3,14 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int32
  
- 
+ #ros2 run Activity02_Publisher_py number_publisher  --ros-args -p timer_length:=2.0 ... -p idkman:=idk
 class PublisherNode(Node): 
     def __init__(self):
         super().__init__("Numbers_Node") 
+        self.declare_parameter("timer_length",1.0)
         self.number_publisher = self.create_publisher(Int32,"numbers",10)
         self.get_logger().info("Publisher Started")
-        self.number_timer = self.create_timer(1.0,  self.timer_callback)
+        self.number_timer = self.create_timer(self.get_parameter("timer_length").value,  self.timer_callback)
         self.get_logger().info("Timer Started")
         self.counter = 0
 
