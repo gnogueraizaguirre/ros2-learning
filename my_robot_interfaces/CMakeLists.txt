@@ -21,6 +21,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/Cubicate.srv"
   "msg/LedPanel.msg"
   "srv/Switch.srv"
+  "msg/Turtles.msg"
+  "msg/Turtle.msg"
  )
 ament_export_dependencies(rosidl_default_runtime) #up to this line
 

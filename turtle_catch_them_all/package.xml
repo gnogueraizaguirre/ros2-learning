@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>turtle_catch_them_all</name>
+  <version>0.0.0</version>
+  <description>Aplicaction for controlling a turtle dynamically. This package spawns 5 or so turtles randomly in turtlesim and the main turtle has to path towards them and despawn them</description>
+  <maintainer email="g.nogueraizaguirre@gmail.com">gus</maintainer>
+  <license>Apache-2.0</license>
+
+  <depend>rclpy</depend>
+  <depend>turtlesim</depend>
+  <depend>my_robot_interfaces</depend>
+  <depend>turtlesim_msgs</depend>
+
+
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_mypy</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>ament_xmllint</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
