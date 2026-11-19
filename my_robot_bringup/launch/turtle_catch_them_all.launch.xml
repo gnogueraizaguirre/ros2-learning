@@ -1,4 +1,7 @@
 <launch>
-    <node pkg="turtlesim" exec="turtlesim_node" name="my_turtle" >
+    <node pkg="turtlesim" exec="turtlesim_node" name="turtlesim_catch_them_all">
+    </node>
+    <node pkg="turtle_catch_them_all" exec="turtle_spawner">
+        <param name="timer" value="0.5"/>
     </node>
 </launch>
