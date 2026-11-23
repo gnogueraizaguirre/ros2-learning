@@ -4,4 +4,6 @@
     <node pkg="turtle_catch_them_all" exec="turtle_spawner">
         <param name="timer" value="0.5"/>
     </node>
+    <node pkg="turtle_catch_them_all" exec="turtle_controller">
+    </node>
 </launch>
