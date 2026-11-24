@@ -50,7 +50,7 @@ class TurtleSpawnerNode(Node):
                 request = Kill.Request()
                 request.name = turtle[2]
                 future = self.kill_client_.call_async(request)
-                self.get_logger().warning(f"Turtle Killed: {turtle[2]}")
+                #self.get_logger().warning(f"Turtle Killed: {turtle[2]}")
                 future.add_done_callback(partial(self.kill_turtle_callback, request = request))
 
     def kill_turtle_callback(self,future, request):
@@ -67,7 +67,7 @@ class TurtleSpawnerNode(Node):
             self.get_logger().error(f"Failed to kill {request.name}: {e}")
 
 
-        
+ 
     def update_my_turtle_pose(self, pose : Pose):
         self.my_turtle_pose.x = pose.x
         self.my_turtle_pose.y = pose.y
